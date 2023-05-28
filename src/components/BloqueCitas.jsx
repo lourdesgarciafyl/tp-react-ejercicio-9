@@ -1,12 +1,12 @@
 import {Row} from "react-bootstrap"
 import CardCita from "./CardCita";
 
-const BloqueCitas = ({arrayCitas}) => {
+const BloqueCitas = ({arrayCitas, borrarCita}) => {
 
     return(
-        <Row xs={2} md={4} className="g-4 mt-3">
+        <Row xs={12} md={4} className="g-4 mt-3">
             {arrayCitas.map((itemCita, indice) => (
-                <CardCita itemCita={itemCita} indiceCita={indice}></CardCita>
+                <CardCita itemCita={itemCita} indiceCita={indice} borrarCita={borrarCita}></CardCita>
             ))}
         </Row>
     )

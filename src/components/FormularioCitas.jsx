@@ -19,6 +19,10 @@ const FormularioCitas = () => {
       )
       reset()
     }
+    const borrarCita = (nombreCita) => {
+        let copiaArrayCitas = citas.filter((cita) => cita !== nombreCita);
+        setColores(copiaArrayCitas)
+    }  
 
     return(
         <section>
@@ -126,7 +130,7 @@ const FormularioCitas = () => {
         </Button>
         </div>
       </Form>
-      <BloqueCitas arrayCitas={citas}> </BloqueCitas>
+      <BloqueCitas arrayCitas={citas} borrarCita={borrarCita}> </BloqueCitas>
       </section>
     )
 }
