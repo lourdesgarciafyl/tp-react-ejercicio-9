@@ -23,7 +23,7 @@ const FormularioCitas = () => {
     }
     const borrarCita = (id) => {
         let copiaArrayCitas = citas.filter((cita) => cita.id !== id);
-        setColores(copiaArrayCitas)
+        setCitas(copiaArrayCitas)
     }  
 
     return(
