@@ -2,12 +2,16 @@ import { Form, Col, Row, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import Swal from 'sweetalert2'
 import BloqueCitas from "./BloqueCitas";
+import { useState } from "react";
 
 const FormularioCitas = () => {
+    const [citas, setCitas] = useState([])
+
     const { register, formState: {errors}, reset , handleSubmit} = useForm()
   
     const apretarEnviar = (data) => {
       console.log(data)
+      setCitas([...citas, data])
       Swal.fire(
         "Cita agendada correctamente",
         "No olvides traer el carnet de tu mascota.",
@@ -122,9 +126,7 @@ const FormularioCitas = () => {
         </Button>
         </div>
       </Form>
-      <BloqueCitas>
-        
-      </BloqueCitas>
+      <BloqueCitas arrayCitas={citas}> </BloqueCitas>
       </section>
     )
 }
