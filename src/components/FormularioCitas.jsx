@@ -1,6 +1,7 @@
 import { Form, Col, Row, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import Swal from 'sweetalert2'
+import BloqueCitas from "./BloqueCitas";
 
 const FormularioCitas = () => {
     const { register, formState: {errors}, reset , handleSubmit} = useForm()
@@ -16,6 +17,7 @@ const FormularioCitas = () => {
     }
 
     return(
+        <section>
         <Form noValidate id="formDatos" onSubmit={handleSubmit(apretarEnviar)}>
         <h2 className="fs-5 lead text-center">Llenar el formulario para crear una cita</h2>
         <Row className="justify-content-center">
@@ -120,6 +122,10 @@ const FormularioCitas = () => {
         </Button>
         </div>
       </Form>
+      <BloqueCitas>
+        
+      </BloqueCitas>
+      </section>
     )
 }
 
