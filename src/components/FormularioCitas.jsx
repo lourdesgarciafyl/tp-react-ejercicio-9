@@ -16,7 +16,7 @@ const FormularioCitas = () => {
     }
 
     return(
-        <Form id="formDatos" onSubmit={handleSubmit(apretarEnviar)}>
+        <Form noValidate id="formDatos" onSubmit={handleSubmit(apretarEnviar)}>
         <h2 className="fs-5 lead text-center">Llenar el formulario para crear una cita</h2>
         <Row className="justify-content-center">
           <Col md={5} className="mt-2">
@@ -46,7 +46,7 @@ const FormularioCitas = () => {
             <Form.Label>Nombre del dueño/a</Form.Label>
             <Form.Control 
             type="text" 
-            placeholder="Juan Perez" 
+            placeholder="María Lourdes" 
             required 
             {...register(`nombreDuenio`,{
               required: "Campo obligatorio",
@@ -72,7 +72,7 @@ const FormularioCitas = () => {
             {...register(`fecha`,{
               required: "Campo obligatorio",
               })} />
-              <Form.Text className="text-danger">{errors.fecha?.message}</Form.Text>
+              <Form.Text className="text-danger">{""}{errors.fecha?.message}</Form.Text>
             </Form.Group>
           </Col>
 
@@ -80,13 +80,13 @@ const FormularioCitas = () => {
             <Form.Group controlId="validarHora">
             <Form.Label>Hora</Form.Label>
             <Form.Control 
-            type="hour" 
+            type="time" 
             placeholder="16:30" 
             required 
             {...register(`hora`,{
               required: "Campo obligatorio",
               })} />
-              <Form.Text className="text-danger">{errors.hora?.message}</Form.Text>
+              <Form.Text className="text-danger">{""}{errors.hora?.message}</Form.Text>
             </Form.Group>
           </Col>
 
@@ -95,7 +95,9 @@ const FormularioCitas = () => {
             <Form.Label>Sintomas</Form.Label>
             <Form.Control 
             type="text" 
-            placeholder="Dolor de panza y cansancio" 
+            placeholder="Por ejemplo: dolor de panza y cansancio" 
+            as="textarea"
+            rows={4}
             required 
             {...register(`sintomas`,{
               required: "Campo obligatorio",
