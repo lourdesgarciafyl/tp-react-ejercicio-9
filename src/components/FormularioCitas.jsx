@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import Swal from 'sweetalert2'
 import BloqueCitas from "./BloqueCitas";
 import { useState } from "react";
+import { v4 as uuidv4 } from 'uuid';
 
 const FormularioCitas = () => {
     const [citas, setCitas] = useState([])
@@ -11,6 +12,7 @@ const FormularioCitas = () => {
   
     const apretarEnviar = (data) => {
       console.log(data)
+      data.id = uuidv4()
       setCitas([...citas, data])
       Swal.fire(
         "Cita agendada correctamente",
@@ -19,8 +21,8 @@ const FormularioCitas = () => {
       )
       reset()
     }
-    const borrarCita = (nombreCita) => {
-        let copiaArrayCitas = citas.filter((cita) => cita !== nombreCita);
+    const borrarCita = (id) => {
+        let copiaArrayCitas = citas.filter((cita) => cita.id !== id);
         setColores(copiaArrayCitas)
     }  
 

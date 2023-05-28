@@ -5,8 +5,8 @@ const BloqueCitas = ({arrayCitas, borrarCita}) => {
 
     return(
         <Row xs={12} md={4} className="g-4 mt-3">
-            {arrayCitas.map((itemCita, indice) => (
-                <CardCita itemCita={itemCita} indiceCita={indice} borrarCita={borrarCita}></CardCita>
+            {arrayCitas.map((cita, indice) => (
+                <CardCita itemCita={cita} id={cita.id} indiceCita={indice} borrarCita={borrarCita}></CardCita>
             ))}
         </Row>
     )
