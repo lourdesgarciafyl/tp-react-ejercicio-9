@@ -1,22 +1,23 @@
 import {Card, Col} from "react-bootstrap"
-import { XCircle } from "react-bootstrap-icons";
 
 const CardCita = ({itemCita}) => {
     const {nombreMascota, nombreDuenio, fecha, hora, sintomas} = {... itemCita} 
     return (
         <Col>
           <Card className="mb-2">
-            <Card.Body className="text-center">
-              <Card.Title>Mascota: {nombreMascota} <br/> Dueño/a: {nombreDuenio} </Card.Title>
+            <Card.Body className="px-1">
+              <Card.Title className="ps-2">Mascota: {nombreMascota} <br/> Dueño/a: {nombreDuenio} </Card.Title>
               <hr />
-              <Card.Text className="py-2" id="fondoCard">
-                <b>Fecha: {fecha}</b>
+              <Card.Text className="py-2 ps-2 mx-0" id="fondoCard">
+                <b>Fecha: </b>{fecha}
                 <br />
-                <b>Hora: {hora}</b>
+                <b>Hora: </b>{hora}
                 <br />
-                <b>Sintomas: {sintomas}</b>
+                <b>Sintomas: </b>{sintomas}
               </Card.Text>
-              <button className="btn btn-danger rounded-5 my-2"><XCircle className="text-white"/></button>
+              <div className="text-center">
+              <button className="btn btn-danger rounded-3 my-2">Eliminar cita</button>
+              </div>
             </Card.Body>
           </Card>
         </Col>
