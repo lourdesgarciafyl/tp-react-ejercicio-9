@@ -8,3 +8,11 @@
 #containerPrincipal{
   flex-grow: 1;
 }
+#formDatos{
+  background-color: #add4d2;
+  padding: 20px;
+  margin-top: 20px;
+}
+#btnEnviar{
+  width: 50px;
+}
